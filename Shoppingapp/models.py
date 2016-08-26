@@ -8,7 +8,7 @@ status = (
 )
 
 
-# class User(models.Model):
+# class User(models.User):
 #     user_id			=       models.AutoField(primary_key=True, editable=False)
 #     first_name        	=       models.CharField(max_length=45,null=True,blank=True)
 #     last_name        	=       models.CharField(max_length=45,null=True,blank=True)
