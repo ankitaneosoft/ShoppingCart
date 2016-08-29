@@ -90,15 +90,20 @@ TEMPLATE_DIRS = (
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd8ve91qrjut0tt',
+#         'USER': 'jvsxzjclygwbdq',
+#         'PASSWORD': 'cg1JlBOkOt2buxUmeKT_jL1tzc',
+#         'HOST': 'ec2-54-221-225-242.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+#         'PORT': '5432',        
+#     }
+# }
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8ve91qrjut0tt',
-        'USER': 'jvsxzjclygwbdq',
-        'PASSWORD': 'cg1JlBOkOt2buxUmeKT_jL1tzc',
-        'HOST': 'ec2-54-221-225-242.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-        'PORT': '5432',        
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 
