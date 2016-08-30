@@ -18,5 +18,16 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', 'Shoppingapp.views.home',name='home'),
+    #url(r'^', 'Shoppingapp.views.home',name='home'),
+    url(r'^home/', 'Shoppingapp.views.home',name='home'),
+    url(r'^blog/', 'Shoppingapp.views.blog',name='blog'),
+    url(r'^cart/', 'Shoppingapp.views.cart',name='cart'),
+    url(r'^checkout/', 'Shoppingapp.views.checkout',name='checkout'),
+    url(r'^contact/', 'Shoppingapp.views.contact',name='contact'),
+    url(r'^product/', 'Shoppingapp.views.product',name='product'),
+    url(r'^shop/', 'Shoppingapp.views.shop',name='shop'),
+    url(r'^product-details/', 'Shoppingapp.views.product_detail',name='product_detail'),
+    url(r'^blog-single/', 'Shoppingapp.views.blog_single',name='blog_single'),
+    url(r'^page-not-found/', 'Shoppingapp.views.page_not_found',name='page_not_found'),
+    url(r'^login/', 'Shoppingapp.views.login',name='login'),
 ]

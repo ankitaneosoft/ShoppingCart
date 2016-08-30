@@ -1,4 +1,6 @@
-
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
 
 	<section id="cart_items">
 		<div class="container">
@@ -123,7 +125,7 @@
 					<tbody>
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="'{% static/cart/one.png' %}" alt=""></a>
+								<a href=""><img src="{% static 'images/cart/one.png' %}" alt=""></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">Colorblock Scuba</a></h4>
@@ -149,7 +151,7 @@
 
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="'{% static/cart/two.png' %}" alt=""></a>
+								<a href=""><img src="{% static 'images/cart/two.png' %}" alt=""></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">Colorblock Scuba</a></h4>
@@ -174,7 +176,7 @@
 						</tr>
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="'{% static/cart/three.png' %}" alt=""></a>
+								<a href=""><img src="{% static 'images/cart/three.png' %}" alt=""></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">Colorblock Scuba</a></h4>
@@ -236,7 +238,7 @@
 				</div>
 		</div>
 	</section> <!--/#cart_items-->
-
+{% endblock %}	
 	
 
 	

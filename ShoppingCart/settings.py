@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import dj_database_url
+#import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -91,16 +91,7 @@ TEMPLATE_DIRS = (
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd8ve91qrjut0tt',
-#         'USER': 'jvsxzjclygwbdq',
-#         'PASSWORD': 'cg1JlBOkOt2buxUmeKT_jL1tzc',
-#         'HOST': 'ec2-54-221-225-242.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-#         'PORT': '5432',        
-#     }
-# }
+
 
 
 DATABASES = {
