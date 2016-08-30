@@ -8,15 +8,20 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
-							<input type="email" placeholder="Email Address" />
-							<input type="password" placeholder="Password" />
+						<form id="signin_form" type="submit" method="POST">
+							{% csrf_token %}                                        
+
+							<input id="user_email" type="email" placeholder="Email Address" />
+							<input id="user_password" type="password" placeholder="Password" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
+						<br>
+						<label id="signin-error-message" style="color: rgb(254, 152, 15);"></label>
+
 					</div><!--/login form-->
 				</div>
 				<div class="col-sm-1">
@@ -25,21 +30,24 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="#">
-							<input required pattern="[a-zA-Z ]+$" type="text" placeholder="Name"/>
-							<input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" type="email" placeholder="Email Address"/>
-							<input required type="password" placeholder="Password"/>
+						<form id="signup_form" type="submit" method="POST">
+							{% csrf_token %}                                        
+							<input id="name" name="name" required pattern="[a-zA-Z ]+$" type="text" placeholder="Name"/>
+							<input id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" type="email" placeholder="Email Address"/>
+							<input id="password" name="password" required type="password" placeholder="Password"/>
 							<button type="submit" id="signup_btn" class="btn btn-default">Signup</button>
 						</form>
+						<br>
+						<label id="error-message" style="color: rgb(254, 152, 15);"></label>
+
 					</div><!--/sign up form-->
 				</div>
 			</div>
 		</div>
 	</section><!--/form-->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'customise_js/user.js' %}"></script>
 {% endblock %}	
 
-<script type="text/javascript">
+<!-- customise js file -->
 
-
-
-</script>

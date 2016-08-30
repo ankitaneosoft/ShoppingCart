@@ -26,6 +26,13 @@ status = (
     
 )
 
+availability_status = (
+    ('1','In Stock'),
+    ('0','Out Of Stock'),
+)
+
+
+PRODUCT_IMAGES_PATH ='images/product_images/' 
 
 class Customer(User):
     customer_id			=       models.AutoField(primary_key=True, editable=False)
@@ -60,3 +67,26 @@ class Brand(models.Model):
 
     def __unicode__(self):
         return unicode(self.brand_id)
+
+class Product(models.Model):
+    product_id       =       models.AutoField(primary_key=True, editable=False)
+    brand_id            =       models.ForeignKey(Brand,blank=True)
+    created_date     =       models.DateTimeField(null=True,blank=True,default=datetime.datetime.now())
+    product_status   =       models.CharField(max_length=1,default="1",choices=status)
+
+    def __unicode__(self):
+        return unicode(self.product_id)        
+
+class ProductDetail(models.Model):
+    product_detail_id     =       models.AutoField(primary_key=True, editable=False)
+    product_id            =       models.ForeignKey(Product,blank=True)
+    product_name          =       models.CharField(max_length=45,null=True,blank=True)
+    product_price         =       models.IntegerField(null=True,blank=True)
+    created_date          =       models.DateTimeField(null=True,blank=True,default=datetime.datetime.now())
+    product_image         =       models.ImageField("Image",upload_to=PRODUCT_IMAGES_PATH,max_length=500, default=None)
+    product_status        =       models.CharField(max_length=1,default="1",choices=status)
+    product_availability  =       models.CharField(max_length=1,default="1",choices=availability_status)
+    product_quantity      =       models.IntegerField(null=True,blank=True)
+
+    def __unicode__(self):
+        return unicode(self.product_detail_id)        

@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from User.urls import user_urlpattern
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^', 'Shoppingapp.views.home',name='home'),
+    url(r'^user/', include(user_urlpattern)),    
+    url(r'^$', 'Shoppingapp.views.home',name='home'),
     url(r'^home/', 'Shoppingapp.views.home',name='home'),
     url(r'^blog/', 'Shoppingapp.views.blog',name='blog'),
     url(r'^cart/', 'Shoppingapp.views.cart',name='cart'),
@@ -29,5 +31,5 @@ urlpatterns = [
     url(r'^product-details/', 'Shoppingapp.views.product_detail',name='product_detail'),
     url(r'^blog-single/', 'Shoppingapp.views.blog_single',name='blog_single'),
     url(r'^page-not-found/', 'Shoppingapp.views.page_not_found',name='page_not_found'),
-    url(r'^login/', 'Shoppingapp.views.login',name='login'),
+    url(r'^signin/', 'Shoppingapp.views.signin',name='signin'),
 ]
