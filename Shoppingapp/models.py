@@ -90,3 +90,15 @@ class ProductDetail(models.Model):
 
     def __unicode__(self):
         return unicode(self.product_detail_id)        
+
+
+class ProductReviews(models.Model):
+    product_review_id     =       models.AutoField(primary_key=True, editable=False)
+    product_id            =       models.ForeignKey(Product,blank=True)
+    user_name          =       models.CharField(max_length=45,null=True,blank=True)
+    user_email          =       models.CharField(max_length=45,null=True,blank=True)
+    user_review          =       models.CharField(max_length=45,null=True,blank=True)
+    created_date          =       models.DateTimeField(null=True,blank=True,default=datetime.datetime.now())
+
+    def __unicode__(self):
+        return unicode(self.product_review_id)        

@@ -16,10 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from User.urls import user_urlpattern
+from Shoppingapp.product_urls import product_urlpattern
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^user/', include(user_urlpattern)),    
+    url(r'^product/', include(product_urlpattern)),    
     url(r'^$', 'Shoppingapp.views.home',name='home'),
     url(r'^home/', 'Shoppingapp.views.home',name='home'),
     url(r'^blog/', 'Shoppingapp.views.blog',name='blog'),

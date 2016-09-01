@@ -88,7 +88,8 @@ def product_detail(request):
     brand_list = Brand.objects.filter(brand_status=1)
     product_list = ProductDetail.objects.filter(product_status=1)       
     product_obj = ProductDetail.objects.get(product_detail_id=request.GET.get('product_id'))       
-    return render(request, 'product-details.html',{'product_list':product_list,'brand_list':brand_list,'category_list':category_list,'user_name': user_name,'product_obj':product_obj})    
+    review_list = ProductReviews.objects.filter(product_id=request.GET.get('product_id'))
+    return render(request, 'product-details.html',{'review_list':review_list,'product_list':product_list,'brand_list':brand_list,'category_list':category_list,'user_name': user_name,'product_obj':product_obj})    
 
 def blog_single(request):
     try:

@@ -131,4 +131,3 @@ MEDIA_URL ='/media/'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-print '======media root ===========',MEDIA_URL
